@@ -1,4 +1,10 @@
-
+body{
+  counter-reset: my-sec-counter;
+}
+ul li::before{
+  counter-increment: my-sec-counter;
+  content: " " counter(my-sec-counter) ". ";
+}
   ul {
     margin: 0;
     padding: 0;
