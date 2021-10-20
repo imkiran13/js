@@ -1,0 +1,44 @@
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+  }
+  
+  ul li:nth-child(odd) {
+  background: #f9f9f9;
+  }
+  ul li:hover {
+    background: #ddd;
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color:rgb(189, 127, 14);
+    color: white;
+  }
+  .header {
+    background-color: #1e2e4e;
+    padding: 20px 20px;
+    color: white;
+    text-align: center;
+  }
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

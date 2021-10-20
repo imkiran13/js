@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-fluid bg-light text-primary display-4 text-center p-5">
+      <div id="digitalClock" onload="currentTime()"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      function currentTime() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        var session = "AM";
+
+        if (hours === 0) {
+          hours = 12;
+        }
+        if (hours > 12) {
+          hours = hours - 12;
+          session = "PM";
+        }
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minute = minute < 10 ? "0" + minute : minute;
+        second = second < 10 ? "0" + second : second;
+
+        var time = hours + ":" + minute + ":" + second + " " + session;
+      
+        document.getElementById("digitalClock").innerText = time;
+        var t = setTimeout(function () {
+          currentTime();
+        }, 1000);
+      }
+      currentTime();
+    </script>
+  </body>
+</html>
